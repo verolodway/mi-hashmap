@@ -39,4 +39,16 @@ public class MiHashMap
         }
         return valor;
     }
+    
+    
+    /**
+     * Método que nos dice si el mapa está vacío o no 
+     */
+    public boolean iEmpty(){
+        boolean vacio = false;
+        if (claves.length != 0){
+            vacio = true;
+        }
+        return vacio;
+    }
 }
