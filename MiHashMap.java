@@ -51,4 +51,11 @@ public class MiHashMap
         }
         return vacio;
     }
+    
+    /**
+     * Método que nos devuelve la cantidad de elementos que hay en el mapa
+     */
+    public int size(){
+        return claves.length;
+    }
 }
