@@ -8,28 +8,46 @@ import java.util.Arrays;
 public class MiHashMap
 {
     //Variable que representa la palabra clave.
-    private String[] clave;
+    private String[] claves;
     //Variable que hace referencia al valor de la clave.
-    private int[] valor;
+    private int[] valores;
     /**
      * Constructor sin parámetros de la clase MiHashMap
      */
     public MiHashMap(){
-        clave = new String[0];
-        valor = new int[0];
+        claves = new String[0];
+        valores = new int[0];
     }
     
     /**
      * Método que asocia el valor especificado con la clave especificada. Si la clave existía, 
      * entonces sobreescribe su valor y devuelve el valor antiguo. Si no existía devuelve -1. 
      */
-    public int put(String claves, int valores){
-        int claveSi = -1;
-        for (int cont = 0; cont > clave.length; cont++) {
-          if (clave[cont] == claves) {
-                claveSi = cont;
+    public void put(String clave, int valor){
+        claves[valor] = clave;
+    }
+    
+    /**
+     * Método que devuelve el valor asociado con la clave especificada o -1 en caso de que la clave no exista.
+     */
+    public int get(String clave){
+        int valor = -1;
+        for (int cont = 0; cont > claves.length; cont++) {
+          if (claves[cont] == clave) {
+                valor = cont;
           }
         }
-        return claveSi;
+        return valor;
+    }
+    
+    /**
+     * Método que nos dice si el mapa está vacío o no 
+     */
+    public boolean iEmpty(){
+        boolean vacio = false;
+        if (claves.length != 0){
+            vacio = true;
+        }
+        return vacio;
     }
 }
