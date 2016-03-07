@@ -58,4 +58,15 @@ public class MiHashMap
     public int size(){
         return claves.length;
     }
+    
+    /**
+     * Método que borra un elemento de una posicion del mapa
+     */
+    public void remove(String clave){
+        for (int i = 0; i < claves.length; i++){
+            if(claves[i] == clave){
+                claves[i] = 0;
+            }
+        }
+    }
 }
